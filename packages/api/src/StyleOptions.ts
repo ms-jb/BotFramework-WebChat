@@ -253,12 +253,8 @@ type StyleOptions = {
   /**
    * Send box styling
    */
-
   hideSendBox?: boolean;
   hideUploadButton?: boolean;
-  microphoneButtonColorOnDictate?: string;
-  sendBoxBackground?: string;
-
   /**
    * The comma-delimited file types that the upload button should accept.
    * @example 'image/*,.pdf'
@@ -268,6 +264,12 @@ type StyleOptions = {
    * If true, the upload button will accept multiple files.
    */
   uploadMultiple?: boolean;
+  /**
+   * Send the attachments and message text together as a single activity
+   */
+  combineAttachmentsAndText?: boolean;
+  microphoneButtonColorOnDictate?: string;
+  sendBoxBackground?: string;
 
   /** Send box button: Icon color, defaults to subtle */
   sendBoxButtonColor?: string;
