@@ -2,7 +2,6 @@ import useActiveTyping from './useActiveTyping';
 import useActivities from './useActivities';
 import useActivityKeys from './useActivityKeys';
 import useActivityKeysByRead from './useActivityKeysByRead';
-import useAttachments from './useAttachments';
 import useAvatarForBot from './useAvatarForBot';
 import useAvatarForUser from './useAvatarForUser';
 import useByteFormatter from './useByteFormatter';
@@ -20,6 +19,7 @@ import useDirection from './useDirection';
 import useDisabled from './useDisabled';
 import useDismissNotification from './useDismissNotification';
 import useEmitTypingIndicator from './useEmitTypingIndicator';
+import useFiles from './useFiles';
 import useGetActivityByKey from './useGetActivityByKey';
 import useGetHasAcknowledgedByActivityKey from './useGetHasAcknowledgedByActivityKey';
 import useGetKeyByActivity from './useGetKeyByActivity';
@@ -76,7 +76,6 @@ export {
   useActivities,
   useActivityKeys,
   useActivityKeysByRead,
-  useAttachments,
   useAvatarForBot,
   useAvatarForUser,
   useByteFormatter,
@@ -94,6 +93,7 @@ export {
   useDisabled,
   useDismissNotification,
   useEmitTypingIndicator,
+  useFiles,
   useGetActivityByKey,
   useGetHasAcknowledgedByActivityKey,
   useGetKeyByActivity,
