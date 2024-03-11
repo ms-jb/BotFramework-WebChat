@@ -14,13 +14,19 @@ import LocalizedStrings from '../../types/LocalizedStrings';
 import PrecompiledGlobalize from '../../types/PrecompiledGlobalize';
 import TelemetryMeasurementEvent from '../../types/TelemetryMeasurementEvent';
 
-import type { DirectLineJSBotConnection, Observable, WebChatActivity } from 'botframework-webchat-core';
+import type {
+  DirectLineAttachment,
+  DirectLineJSBotConnection,
+  Observable,
+  WebChatActivity
+} from 'botframework-webchat-core';
 
 type WebChatAPIContext = {
   activityRenderer?: LegacyActivityRenderer;
   activityStatusRenderer: RenderActivityStatus;
   attachmentForScreenReaderRenderer?: AttachmentForScreenReaderComponentFactory;
   attachmentRenderer?: RenderAttachment;
+  attachments?: DirectLineAttachment[];
   avatarRenderer?: AvatarComponentFactory;
   clearSuggestedActions?: () => void;
   dir?: string;
@@ -52,6 +58,7 @@ type WebChatAPIContext = {
   sendMessageBack?: (value: any, text?: string, displayText?: string) => void;
   sendPostBack?: (value?: any) => void;
   sendTypingIndicator?: boolean;
+  setAttachments?: (attachments: DirectLineAttachment[]) => void;
   setDictateInterims?: (interims: string[]) => void;
   setDictateState?: (dictateState: number) => void;
   setNotification?: (notification: Notification) => void;

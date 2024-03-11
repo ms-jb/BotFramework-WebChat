@@ -2,6 +2,7 @@ import useActiveTyping from './useActiveTyping';
 import useActivities from './useActivities';
 import useActivityKeys from './useActivityKeys';
 import useActivityKeysByRead from './useActivityKeysByRead';
+import useAttachments from './useAttachments';
 import useAvatarForBot from './useAvatarForBot';
 import useAvatarForUser from './useAvatarForUser';
 import useByteFormatter from './useByteFormatter';
@@ -75,6 +76,7 @@ export {
   useActivities,
   useActivityKeys,
   useActivityKeysByRead,
+  useAttachments,
   useAvatarForBot,
   useAvatarForUser,
   useByteFormatter,
