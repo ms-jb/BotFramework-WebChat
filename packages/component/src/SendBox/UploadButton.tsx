@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import React, { FC, useCallback, useRef } from 'react';
 
-import { useStyleOptions } from 'botframework-webchat-api/lib/hooks';
+import { useAttachments, useStyleOptions } from 'botframework-webchat-api/lib/hooks';
 import downscaleImageToDataURL from '../Utils/downscaleImageToDataURL/index';
 import connectToWebChat from '../connectToWebChat';
 import useStyleToEmotionObject from '../hooks/internal/useStyleToEmotionObject';
@@ -96,12 +96,13 @@ type UploadButtonProps = {
 
 const UploadButton: FC<UploadButtonProps> = ({ className }) => {
   const [{ uploadButton: uploadButtonStyleSet }] = useStyleSet();
-  const [{ uploadFileTypes, uploadMultiple }] = useStyleOptions();
+  const [{ uploadFileTypes, uploadMultiple, combineAttachmentsAndText }] = useStyleOptions();
   const [disabled] = useDisabled();
   const inputRef = useRef<HTMLInputElement>();
   const localize = useLocalizer();
   const rootClassName = useStyleToEmotionObject()(ROOT_STYLE) + '';
   const sendFiles = useSendFiles();
+  const [{ attachments, setAttachments }] = useAttachments();
 
   const { current } = inputRef;
   const uploadFileString = localize('TEXT_INPUT_UPLOAD_BUTTON_ALT');
@@ -112,13 +113,18 @@ const UploadButton: FC<UploadButtonProps> = ({ className }) => {
 
   const handleFileChange = useCallback(
     ({ target: { files } }) => {
-      sendFiles(files);
+      if (combineAttachmentsAndText) {
+        // Store attachments in context but don't send yet
+        setAttachments([...attachments, ...files]);
+      } else {
+        sendFiles(files);
+      }
 
       if (current) {
         current.value = null;
       }
     },
-    [current, sendFiles]
+    [attachments, combineAttachmentsAndText, current, sendFiles, setAttachments]
   );
 
   return (
