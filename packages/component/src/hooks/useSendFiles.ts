@@ -25,8 +25,7 @@ export default function useSendFiles(): (files: File[], text?: string) => void {
       uploadThumbnailContentType,
       uploadThumbnailHeight,
       uploadThumbnailQuality,
-      uploadThumbnailWidth,
-      combineAttachmentsAndText
+      uploadThumbnailWidth
     }
   ] = useStyleOptions();
   const trackTiming = useTrackTiming();
