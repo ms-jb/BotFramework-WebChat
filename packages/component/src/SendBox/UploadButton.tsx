@@ -5,6 +5,7 @@ import React, { FC, useCallback, useRef } from 'react';
 
 import downscaleImageToDataURL from '../Utils/downscaleImageToDataURL/index';
 import connectToWebChat from '../connectToWebChat';
+import { useFocus } from '../hooks';
 import useStyleToEmotionObject from '../hooks/internal/useStyleToEmotionObject';
 import useSendFiles from '../hooks/useSendFiles';
 import useStyleSet from '../hooks/useStyleSet';
@@ -102,7 +103,7 @@ const UploadButton: FC<UploadButtonProps> = ({ className }) => {
   const rootClassName = useStyleToEmotionObject()(ROOT_STYLE) + '';
   const sendFiles = useSendFiles();
   const [{ files, setFiles }] = useFiles();
-  console.log({ files });
+  const focus = useFocus();
 
   const { current } = inputRef;
   const uploadFileString = localize('TEXT_INPUT_UPLOAD_BUTTON_ALT');
@@ -116,6 +117,8 @@ const UploadButton: FC<UploadButtonProps> = ({ className }) => {
       setFiles(files);
 
       if (combineAttachmentsAndText) {
+        current.blur();
+        focus('sendBox');
         return;
       }
 
@@ -125,7 +128,7 @@ const UploadButton: FC<UploadButtonProps> = ({ className }) => {
         current.value = null;
       }
     },
-    [combineAttachmentsAndText, current, sendFiles, setFiles]
+    [combineAttachmentsAndText, current, focus, sendFiles, setFiles]
   );
 
   return (
@@ -146,7 +149,7 @@ const UploadButton: FC<UploadButtonProps> = ({ className }) => {
       />
       <IconButton alt={uploadFileString} aria-label={uploadFileString} disabled={disabled} onClick={handleClick}>
         <AttachmentIcon />
-        {files.length ? <React.Fragment>✔️</React.Fragment> : null}
+        {files?.length ? <React.Fragment>✔️</React.Fragment> : null}
       </IconButton>
     </div>
   );

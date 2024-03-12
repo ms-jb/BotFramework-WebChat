@@ -71,7 +71,7 @@ const SendBoxComposer = ({ children }: PropsWithChildren<{}>) => {
   const [error, setError] = useState<SendError | false>(false);
   const [sendBoxValue] = useSendBoxValue();
   const apiSubmitSendBox = useSubmitSendBox();
-  const [{ files }] = useFiles();
+  const [{ files, setFiles }] = useFiles();
   const sendFiles = useSendFiles();
   const focus = useFocus();
   const localize = useLocalizer();
@@ -131,6 +131,7 @@ const SendBoxComposer = ({ children }: PropsWithChildren<{}>) => {
         if (combineAttachmentsAndText) {
           console.log('sending', sendBoxValue, files);
           sendFiles(files, sendBoxValue);
+          setFiles([]);
           // return;
         }
         apiSubmitSendBox();
@@ -146,7 +147,8 @@ const SendBoxComposer = ({ children }: PropsWithChildren<{}>) => {
       apiSubmitSendBox,
       sendBoxValue,
       files,
-      sendFiles
+      sendFiles,
+      setFiles
     ]
   );
 

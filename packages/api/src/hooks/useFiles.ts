@@ -1,11 +1,10 @@
-import { DirectLineAttachment } from 'botframework-webchat-core';
 import useWebChatAPIContext from './internal/useWebChatAPIContext';
-import { useState } from 'react';
 
-export default function useFiles() {
+/**
+ * This is a hook that returns the files and setFiles from the context.
+ */
+export default function useFiles(): [{ files: File[]; setFiles: (files: File[]) => void }] {
   const { files, setFiles } = useWebChatAPIContext();
-
-  // const [files, setFiles] = useState<FileList[]>([]);
 
   return [{ files, setFiles }];
 }

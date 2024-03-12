@@ -34,7 +34,7 @@ type WebChatAPIContext = {
   dismissNotification?: (id: string) => void;
   downscaleImageToDataURL?: (blob: Blob, maxWidth: number, maxHeight: number, type: string, quality: number) => string;
   emitTypingIndicator?: () => void;
-  files?: DirectLineAttachment[];
+  files?: File[];
   grammars?: any;
   groupActivities?: GroupActivities;
   internalErrorBoxClass?: React.Component | Function;
@@ -60,7 +60,7 @@ type WebChatAPIContext = {
   sendTypingIndicator?: boolean;
   setDictateInterims?: (interims: string[]) => void;
   setDictateState?: (dictateState: number) => void;
-  setFiles?: (attachments: DirectLineAttachment[]) => void; // TODO: Or filelist?
+  setFiles?: (files: File[]) => void;
   setNotification?: (notification: Notification) => void;
   setSendBox?: (value: string) => void;
   setSendTimeout?: (timeout: number) => void;

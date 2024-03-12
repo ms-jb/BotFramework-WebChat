@@ -82,8 +82,7 @@ import type {
   DirectLineJSBotConnection,
   OneOrMany,
   GlobalScopePonyfill,
-  WebChatActivity,
-  DirectLineAttachment
+  WebChatActivity
 } from 'botframework-webchat-core';
 import type { ReactNode } from 'react';
 
@@ -541,7 +540,7 @@ const ComposerCore = ({
     [scrollToEndButtonMiddleware]
   );
 
-  const [files, setFiles] = useState<DirectLineAttachment[]>([]);
+  const [files, setFiles] = useState<File[]>([]);
 
   /**
    * This is a heavy function, and it is expected to be only called when there is a need to recreate business logic, e.g.
