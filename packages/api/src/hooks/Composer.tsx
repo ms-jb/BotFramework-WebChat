@@ -614,6 +614,7 @@ const ComposerCore = ({
       renderMarkdown,
       scrollToEndButtonRenderer,
       sendTypingIndicator,
+      setFiles,
       trackDimension,
       userID,
       username

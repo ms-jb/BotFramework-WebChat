@@ -8,8 +8,7 @@ import whileConnected from './effects/whileConnected';
 const getType = mime.getType.bind(mime);
 
 // TODO: We want the message text to go with the files
-function* postActivityWithFiles({ payload: { files, text } }) {
-// console.log(files, text);
+function* postActivityWithFiles({ payload: { files } }) {
   yield put(
     postActivity({
       attachments: [].map.call(files, ({ name, thumbnail, url }) => ({
@@ -21,7 +20,6 @@ function* postActivityWithFiles({ payload: { files, text } }) {
       channelData: {
         attachmentSizes: [].map.call(files, ({ size }) => size)
       },
-      text,
       type: 'message'
     })
   );

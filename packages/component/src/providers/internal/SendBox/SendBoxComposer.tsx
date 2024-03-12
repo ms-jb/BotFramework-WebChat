@@ -131,10 +131,8 @@ const SendBoxComposer = ({ children }: PropsWithChildren<{}>) => {
       } else {
         scrollToEndRef.current?.();
         if (combineAttachmentsAndText) {
-          console.log('sending', sendBoxValue, files);
           sendFiles(files, sendBoxValue);
           setFiles([]);
-          // return;
         }
         apiSubmitSendBox();
       }

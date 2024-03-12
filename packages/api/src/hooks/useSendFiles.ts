@@ -12,14 +12,14 @@ type PostActivityFile = {
   url: string;
 };
 
-export default function useSendFiles(): (files: PostActivityFile[], text?: string) => void {
+export default function useSendFiles(): (files: PostActivityFile[]) => void {
   const { sendFiles } = useWebChatAPIContext();
   const trackEvent = useTrackEvent();
 
   return useCallback(
-    (files, text) => {
+    files => {
       if (files && files.length) {
-        sendFiles(files, text);
+        sendFiles(files);
 
         trackEvent('sendFiles', {
           numFiles: files.length,
