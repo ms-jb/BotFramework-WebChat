@@ -14,12 +14,7 @@ import LocalizedStrings from '../../types/LocalizedStrings';
 import PrecompiledGlobalize from '../../types/PrecompiledGlobalize';
 import TelemetryMeasurementEvent from '../../types/TelemetryMeasurementEvent';
 
-import type {
-  DirectLineAttachment,
-  DirectLineJSBotConnection,
-  Observable,
-  WebChatActivity
-} from 'botframework-webchat-core';
+import type { DirectLineJSBotConnection, Observable, WebChatActivity } from 'botframework-webchat-core';
 
 type WebChatAPIContext = {
   activityRenderer?: LegacyActivityRenderer;
@@ -53,7 +48,7 @@ type WebChatAPIContext = {
   scrollToEndButtonRenderer?: ScrollToEndButtonComponentFactory;
   selectVoice?: (voices: (typeof window.SpeechSynthesisVoice)[], activity: WebChatActivity) => void;
   sendEvent?: (name: string, value: any) => void;
-  sendFiles?: (files: File[]) => void;
+  sendFiles?: (files: File[], text?: string) => void;
   sendMessage?: (text: string, method?: string, { channelData }?: { channelData?: any }) => void;
   sendMessageBack?: (value: any, text?: string, displayText?: string) => void;
   sendPostBack?: (value?: any) => void;
