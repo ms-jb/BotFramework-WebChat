@@ -105,9 +105,11 @@ const SendBoxComposer = ({ children }: PropsWithChildren<{}>) => {
   const submitErrorRef = useRefFrom<'empty' | 'offline' | undefined>(
     connectivityStatus !== 'connected' && connectivityStatus !== 'reconnected'
       ? 'offline'
-      : (!sendBoxValue && !combineAttachmentsAndText) || !files // Allow sending empty message if it's a file upload
-        ? 'empty'
-        : undefined
+      : // If combineAttachments is enabled, allow sending if either there is a message or files
+        // Otherwise, require message text only
+        (combineAttachmentsAndText && (sendBoxValue || files.length)) || (!combineAttachmentsAndText && sendBoxValue)
+        ? undefined
+        : 'empty'
   );
 
   const submit = useCallback<ContextType['submit']>(
