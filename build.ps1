@@ -1,7 +1,9 @@
-npm ci
+# Setup
+npm i --registry https://msazure.pkgs.visualstudio.com/OneAgile/_packaging/jb/npm/registry/
 npm run bootstrap -- --force-local --registry https://msazure.pkgs.visualstudio.com/OneAgile/_packaging/jb/npm/registry/
 npm run build
 
+# Publish
 $packages = "api", "bundle", "component", "core"
 $packages | % {
     cd ".\packages\$_"
@@ -10,7 +12,7 @@ $packages | % {
     cd ..\..
 }
 
-# Clean install:
+# Clean install
 cd .\packages
 git clean -dfxq
 cd ..
