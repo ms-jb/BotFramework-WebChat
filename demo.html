@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WebChat</title>
+    <script src="http://localhost:5000/webchat.js"></script>
+  </head>
+  <body>
+    <div id="webchat" role="main"></div>
+    <script>
+      window.WebChat.renderWebChat(
+        {
+          directLine: window.WebChat.createDirectLine({
+            // Get token from https://compulim.github.io/webchat-loader/
+            token:
+              'eyJhbGciOiJSUzI1NiIsImtpZCI6IjVnZEdBYmd1OExXWGZCOXZFZFY3ZUVveGE1cyIsIng1dCI6IjVnZEdBYmd1OExXWGZCOXZFZFY3ZUVveGE1cyIsInR5cCI6IkpXVCJ9.eyJib3QiOiJ3ZWJjaGF0LW1vY2tib3QiLCJzaXRlIjoiV1lESXlLd0FaQ3ciLCJjb252IjoiQ3BSVFNCbDN4dmZJd0t0aEtIdHBOZy11cyIsInVzZXIiOiJkbF8wMzNmYjRkYzkyMzc0OWNmMGIyYzI0NTQ0M2IwNGJmYSIsIm9yaWdpbiI6WyJodHRwczovL3dlYmNoYXQtcGxheWdyb3VuZC5henVyZXdlYnNpdGVzLm5ldCIsImh0dHA6Ly9sb2NhbGhvc3Q6MzAwMCIsImh0dHBzOi8vbWljcm9zb2Z0LmdpdGh1Yi5pbyIsImh0dHBzOi8vY29tcHVsaW0uZ2l0aHViLmlvIiwiaHR0cHM6Ly9iZnh3ZWJjaGF0ZnVsbGJ1bmRsZS5henVyZXdlYnNpdGVzLm5ldCIsImh0dHA6Ly9sb2NhbGhvc3Q6NTA4MCJdLCJuYmYiOjE3MTAyODE4OTMsImV4cCI6MTcxMDI4NTQ5MywiaXNzIjoiaHR0cHM6Ly9kaXJlY3RsaW5lLmJvdGZyYW1ld29yay5jb20vIiwiYXVkIjoiaHR0cHM6Ly9kaXJlY3RsaW5lLmJvdGZyYW1ld29yay5jb20vIn0.CDVMiIzq6QNG-j_VuoqASu6YqxVDbNozSMGslX92c6_-xzuxNGfoxbB7flowZQPNZXu2xZGiF-IMDrOq0A-dvSq9m9YVkC2fnPvJrUvyUfZjBdVo2GsuJJ7RrehAO7dXJ3mPQkmn55-FerQRLOo2c_KLuCFOvSPyRgZsrM-5gYD39y5xy2tfXMZYYOFCvE7uN9kq6UNOR3Uff2zZhJFSU7a8OctvtYEDb43Oucpkl3ROTHlZh330RhwaZWARHhVEfAUABdamlk28hUEulMJxQpEzzJcb3b8_qyybjBayFD6RZyUHZPDDBpczynZhgBGqupkYK8xtSpw0zqeeAyNC7w'
+          }),
+          locale: 'en-US',
+          styleOptions:{
+            uploadFileTypes: 'image/*',
+            uploadMultiple: false
+          }
+        },
+        document.getElementById('webchat')
+      );
+    </script>
+  </body>
+</html>
