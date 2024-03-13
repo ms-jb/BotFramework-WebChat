@@ -1,5 +1,5 @@
 npm ci
-npm run bootstrap
+npm run bootstrap -- --force-local --registry https://msazure.pkgs.visualstudio.com/OneAgile/_packaging/jb/npm/registry/
 npm run build
 
 $packages = "api", "bundle", "component", "core"
@@ -10,7 +10,10 @@ $packages | % {
     cd ..\..
 }
 
-
+# Clean install:
+cd .\packages
+git clean -dfxq
+cd ..
 
 <# $src = "H:\Code\power-platform-ux\common\temp\node_modules\.pnpm"
 
