@@ -1,6 +1,8 @@
 # Setup
-npm i --registry https://msazure.pkgs.visualstudio.com/OneAgile/_packaging/jb/npm/registry/
-npm run bootstrap -- --force-local --registry https://msazure.pkgs.visualstudio.com/OneAgile/_packaging/jb/npm/registry/
+$registry = "https://msazure.pkgs.visualstudio.com/OneAgile/_packaging/jb/npm/registry/"
+vsts-npm-auth -C .npmrc
+npm run bootstrap -- --force-local --registry $registry
+npm run build
 npm run build
 
 # Publish
@@ -8,7 +10,7 @@ $packages = "api", "bundle", "component", "core"
 $packages | % {
     cd ".\packages\$_"
     npm version patch
-    npm publish
+    npm publish --registry $registry
     cd ..\..
 }
 
@@ -16,6 +18,8 @@ $packages | % {
 cd .\packages
 git clean -dfxq
 cd ..
+npm ci
+npm run bootstrap -- --registry $registry
 
 <# $src = "H:\Code\power-platform-ux\common\temp\node_modules\.pnpm"
 
