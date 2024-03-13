@@ -101,7 +101,7 @@
   },
   "dependencies": {
     "@babel/runtime": "7.19.0",
-    "adaptivecards": "2.11.1",
+    "adaptivecards": "*",
     "botframework-directlinejs": "0.15.5",
     "botframework-directlinespeech-sdk": "0.0.0-0",
     "@jb/botframework-webchat-api": "0.0.0-0",
