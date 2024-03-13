@@ -21,8 +21,8 @@
     "@fluentui/react": "8.112.9",
     "adaptivecards": "2.11.0",
     "botframework-directlinejs": "0.15.5",
-    "botframework-webchat": "0.0.0-0",
-    "botframework-webchat-core": "0.0.0-0",
+    "@jb/botframework-webchat": "0.0.0-0",
+    "@jb/botframework-webchat-core": "0.0.0-0",
     "classnames": "2.3.2",
     "memoize-one": "6.0.0",
     "on-error-resume-next": "1.1.0",
@@ -33,8 +33,8 @@
     "react-scripts": "^5.0.1"
   },
   "localPeerDependencies": {
-    "botframework-webchat": "0.0.0-0",
-    "botframework-webchat-core": "0.0.0-0"
+    "@jb/botframework-webchat": "0.0.0-0",
+    "@jb/botframework-webchat-core": "0.0.0-0"
   },
   "scripts": {
     "auditfix": "npm audit fix --legacy-peer-deps || exit 0",
