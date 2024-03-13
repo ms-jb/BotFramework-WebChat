@@ -1,6 +1,6 @@
 {
   "name": "botframework-webchat",
-  "version": "0.0.0-0",
+  "version": "5.0.3",
   "description": "A highly-customizable web-based chat client for Azure Bot Services.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -86,10 +86,6 @@
       "7.19.0",
       "@babel/*@7.21 is causing out-of-memory (OOM) issues"
     ],
-    "adaptivecards": [
-      "2.11.1",
-      "needs to bump manually"
-    ],
     "microsoft-cognitiveservices-speech-sdk": [
       "1.17.0",
       "needs to bump manually"
@@ -101,12 +97,12 @@
   },
   "dependencies": {
     "@babel/runtime": "7.19.0",
-    "adaptivecards": "2.11.1",
+    "adaptivecards": "*",
     "botframework-directlinejs": "0.15.5",
     "botframework-directlinespeech-sdk": "0.0.0-0",
-    "botframework-webchat-api": "0.0.0-0",
-    "botframework-webchat-component": "0.0.0-0",
-    "botframework-webchat-core": "0.0.0-0",
+    "botframework-webchat-api": "^5.0.0",
+    "botframework-webchat-component": "^5.0.0",
+    "botframework-webchat-core": "^5.0.0",
     "classnames": "2.3.2",
     "core-js": "3.34.0",
     "markdown-it": "13.0.2",
