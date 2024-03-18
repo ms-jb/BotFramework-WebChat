@@ -1,6 +1,6 @@
 {
   "name": "botframework-webchat-component",
-  "version": "5.0.2",
+  "version": "5.0.3",
   "description": "React component of botframework-webchat",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
