@@ -130,11 +130,12 @@ const SendBoxComposer = ({ children }: PropsWithChildren<{}>) => {
         ]) as readonly [Timeout, Timeout];
       } else {
         scrollToEndRef.current?.();
-        if (combineAttachmentsAndText) {
+        if (combineAttachmentsAndText && files.length) {
           sendFiles(files, sendBoxValue);
           setFiles([]);
+        } else {
+          apiSubmitSendBox();
         }
-        apiSubmitSendBox();
       }
     },
     [
