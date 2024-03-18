@@ -1,6 +1,6 @@
 {
   "name": "embed",
-  "version": "0.0.0-0",
+  "version": "*",
   "description": "",
   "main": "src/index.js",
   "private": true,
