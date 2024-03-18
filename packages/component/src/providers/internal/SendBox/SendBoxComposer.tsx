@@ -69,7 +69,7 @@ const SendBoxComposer = ({ children }: PropsWithChildren<{}>) => {
   const [{ clearTimeout, setTimeout }] = usePonyfill();
   const [connectivityStatus] = useConnectivityStatus();
   const [error, setError] = useState<SendError | false>(false);
-  const [sendBoxValue] = useSendBoxValue();
+  const [sendBoxValue, setSendBoxValue] = useSendBoxValue();
   const apiSubmitSendBox = useSubmitSendBox();
   const [{ files, setFiles }] = useFiles();
   const sendFiles = useSendFiles();
@@ -133,23 +133,25 @@ const SendBoxComposer = ({ children }: PropsWithChildren<{}>) => {
         if (combineAttachmentsAndText && files.length) {
           sendFiles(files, sendBoxValue);
           setFiles([]);
+          setSendBoxValue('');
         } else {
           apiSubmitSendBox();
         }
       }
     },
     [
-      focusRef,
-      submitErrorRef,
-      clearTimeout,
-      setTimeout,
-      scrollToEndRef,
-      combineAttachmentsAndText,
       apiSubmitSendBox,
-      sendBoxValue,
+      clearTimeout,
+      combineAttachmentsAndText,
       files,
+      focusRef,
+      scrollToEndRef,
+      sendBoxValue,
       sendFiles,
-      setFiles
+      setFiles,
+      setSendBoxValue,
+      setTimeout,
+      submitErrorRef
     ]
   );
 
