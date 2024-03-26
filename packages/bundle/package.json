@@ -1,6 +1,6 @@
 {
   "name": "botframework-webchat",
-  "version": "0.0.0-0",
+  "version": "5.0.5",
   "description": "A highly-customizable web-based chat client for Azure Bot Services.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -103,10 +103,10 @@
     "@babel/runtime": "7.19.0",
     "adaptivecards": "2.11.1",
     "botframework-directlinejs": "0.15.5",
-    "botframework-directlinespeech-sdk": "0.0.0-0",
-    "botframework-webchat-api": "0.0.0-0",
-    "botframework-webchat-component": "0.0.0-0",
-    "botframework-webchat-core": "0.0.0-0",
+    "botframework-directlinespeech-sdk": "^4",
+    "botframework-webchat-api": "^5",
+    "botframework-webchat-component": "^5",
+    "botframework-webchat-core": "^5",
     "classnames": "2.3.2",
     "core-js": "3.34.0",
     "markdown-it": "13.0.2",
@@ -155,10 +155,10 @@
     "react-dom": ">= 16.8.6"
   },
   "localPeerDependencies": {
-    "botframework-directlinespeech-sdk": "0.0.0-0",
-    "botframework-webchat-api": "0.0.0-0",
-    "botframework-webchat-component": "0.0.0-0",
-    "botframework-webchat-core": "0.0.0-0"
+    "botframework-directlinespeech-sdk": "^4",
+    "botframework-webchat-api": "^5",
+    "botframework-webchat-component": "^5",
+    "botframework-webchat-core": "^5"
   },
   "localPeerDevDependencies": {
     "isomorphic-react": "^0.0.0-0",
