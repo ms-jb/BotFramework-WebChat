@@ -106,36 +106,37 @@ const UploadButton: FC<UploadButtonProps> = ({ className }) => {
   const [{ setUploadButtonRef, uploadButtonRef }] = useUploadButtonRef();
   const focus = useFocus();
 
+  const { current } = uploadButtonRef;
   const uploadFileString = localize('TEXT_INPUT_UPLOAD_BUTTON_ALT');
 
   const handleClick = useCallback(() => {
-    uploadButtonRef?.current && uploadButtonRef.current.click();
-  }, [uploadButtonRef]);
+    current && current.click();
+  }, [current]);
 
   const handleFileChange = useCallback(
     ({ target: { files } }) => {
       setFiles(files);
 
       if (combineAttachmentsAndText) {
-        uploadButtonRef?.current.blur();
+        current.blur();
         focus('sendBox');
         return;
       }
 
       sendFiles(files);
 
-      if (uploadButtonRef?.current) {
-        uploadButtonRef.current.value = null;
+      if (current) {
+        current.value = null;
       }
     },
-    [combineAttachmentsAndText, focus, sendFiles, setFiles, uploadButtonRef]
+    [combineAttachmentsAndText, current, focus, sendFiles, setFiles]
   );
 
   useEffect(() => {
-    if (uploadButtonRef?.current) {
-      setUploadButtonRef(uploadButtonRef.current);
+    if (current) {
+      setUploadButtonRef(current);
     }
-  }, [uploadButtonRef, setUploadButtonRef]);
+  }, [current, setUploadButtonRef]);
 
   return (
     <div className={classNames(rootClassName, 'webchat__upload-button', uploadButtonStyleSet + '', className)}>
