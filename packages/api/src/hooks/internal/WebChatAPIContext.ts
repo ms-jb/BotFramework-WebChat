@@ -58,7 +58,7 @@ type WebChatAPIContext = {
   setNotification?: (notification: Notification) => void;
   setSendBox?: (value: string) => void;
   setSendTimeout?: (timeout: number) => void;
-  setUploadButtonRef?: (ref: React.RefObject<HTMLButtonElement>) => void;
+  setUploadButtonRef?: (current: HTMLInputElement) => void;
   startDictate?: () => void;
   startSpeakingActivity?: () => void;
   stopDictate?: () => void;
@@ -69,7 +69,7 @@ type WebChatAPIContext = {
   toastRenderer?: RenderToast;
   trackDimension?: (name: string, data: any) => void;
   typingIndicatorRenderer?: any; // TODO
-  uploadButtonRef?: React.RefObject<HTMLButtonElement>;
+  uploadButtonRef?: React.RefObject<HTMLInputElement>;
   userID?: string;
   username?: string;
 };
