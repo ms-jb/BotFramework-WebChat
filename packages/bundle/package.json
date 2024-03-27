@@ -1,6 +1,6 @@
 {
   "name": "botframework-webchat",
-  "version": "5.0.5",
+  "version": "5.1.1",
   "description": "A highly-customizable web-based chat client for Azure Bot Services.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",

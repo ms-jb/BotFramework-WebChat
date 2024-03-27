@@ -1,6 +1,6 @@
 {
   "name": "botframework-webchat-core",
-  "version": "5.0.5",
+  "version": "5.1.1",
   "description": "Core of botframework-webchat",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
